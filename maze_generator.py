@@ -1,7 +1,7 @@
 import pygame
 from random import choice, randrange
 
-RES = WIDTH, HEIGHT = 1202, 902
+RES = WIDTH, HEIGHT = 800, 600
 TILE = 100
 cols, rows = WIDTH // TILE, HEIGHT // TILE
 
@@ -16,13 +16,13 @@ class Cell:
         x, y = self.x * TILE, self.y * TILE
 
         if self.walls['top']:
-            pygame.draw.line(sc, pygame.Color('darkorange'), (x, y), (x + TILE, y), self.thickness)
+            pygame.draw.line(sc, pygame.Color('red'), (x, y), (x + TILE, y), self.thickness)
         if self.walls['right']:
-            pygame.draw.line(sc, pygame.Color('darkorange'), (x + TILE, y), (x + TILE, y + TILE), self.thickness)
+            pygame.draw.line(sc, pygame.Color('red'), (x + TILE, y), (x + TILE, y + TILE), self.thickness)
         if self.walls['bottom']:
-            pygame.draw.line(sc, pygame.Color('darkorange'), (x + TILE, y + TILE), (x , y + TILE), self.thickness)
+            pygame.draw.line(sc, pygame.Color('red'), (x + TILE, y + TILE), (x , y + TILE), self.thickness)
         if self.walls['left']:
-            pygame.draw.line(sc, pygame.Color('darkorange'), (x, y + TILE), (x, y), self.thickness)
+            pygame.draw.line(sc, pygame.Color('red'), (x, y + TILE), (x, y), self.thickness)
 
     def get_rects(self):
         rects = []

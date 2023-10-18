@@ -4,7 +4,7 @@ from maze_generator import *
 class Food:
     def __init__(self):
         self.img = pygame.image.load('img/food.png').convert_alpha()
-        self.img = pygame.transform.scale(self.img, (TILE - 10, TILE - 10))
+        self.img = pygame.transform.scale(self.img, (TILE - 12, TILE - 12))
         self.rect = self.img.get_rect()
         self.set_pos()
 
