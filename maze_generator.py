@@ -1,4 +1,5 @@
 import pygame
+pygame.display.set_mode((0,0)),pygame.FULLSCREEN
 from random import choice, randrange
 
 RES = WIDTH, HEIGHT = 800, 600
