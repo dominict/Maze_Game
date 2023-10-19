@@ -1,8 +1,13 @@
 import pygame
 pygame.display.set_mode((0,0)),pygame.FULLSCREEN
 from random import choice, randrange
+import wx
 
-RES = WIDTH, HEIGHT = 800, 600
+outp= wx.App(False)
+
+WIDTH, HEIGHT= wx.GetDisplaySize()
+
+RES = WIDTH, HEIGHT 
 TILE = 100
 cols, rows = WIDTH // TILE, HEIGHT // TILE
 
