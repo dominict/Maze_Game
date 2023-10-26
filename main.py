@@ -38,7 +38,7 @@ def is_game_over():
         [food.set_pos() for food in food_list]
         set_record(record, score)
         record = get_record()
-        time, score, FPS = 60, 0, 60
+        time, score, FPS = 60, 0, 5000
 
 
 def get_record():
@@ -93,8 +93,8 @@ score = 0
 record = get_record()
 
 # fonts
-font = pygame.font.SysFont('Impact', 150)
-text_font = pygame.font.SysFont('Impact', 80)
+font = pygame.font.SysFont('Impact', 1000)
+text_font = pygame.font.SysFont('Impact', 1000)
 
 while True:
     surface.blit(bg, (WIDTH, 0))
@@ -132,8 +132,8 @@ while True:
     [food.draw() for food in food_list]
 
     # draw stats
-    surface.blit(text_font.render('TIME', True, pygame.Color('cyan'), True), (WIDTH + 70, 30))
-    surface.blit(font.render(f'{time}', True, pygame.Color('cyan')), (WIDTH + 70, 130))
+    surface.blit(text_font.render('TIME', True, pygame.Color('black'), True), (WIDTH + 70, 30))
+    surface.blit(font.render(f'{time}', True, pygame.Color('black')), (WIDTH + 70, 130))
     surface.blit(text_font.render('score:', True, pygame.Color('forestgreen'), True), (WIDTH + 50, 350))
     surface.blit(font.render(f'{score}', True, pygame.Color('forestgreen')), (WIDTH + 70, 430))
     surface.blit(text_font.render('record:', True, pygame.Color('magenta'), True), (WIDTH + 30, 620))
