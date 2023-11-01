@@ -3,8 +3,8 @@ from maze_generator import *
 
 class Food:
     def __init__(self):
-        self.img = pygame.image.load('img/food.png').convert_alpha()
-        self.img = pygame.transform.scale(self.img, (TILE - 12, TILE - 12))
+        self.img = pygame.image.load('img/dog.png').convert_alpha()
+        self.img = pygame.transform.scale(self.img, (TILE - 6, TILE - 6))
         self.rect = self.img.get_rect()
         self.set_pos()
 
@@ -57,7 +57,7 @@ def set_record(record, score):
         f.write(str(rec))
 
 
-FPS = 60
+FPS = 5000
 pygame.init()
 game_surface = pygame.Surface(RES)
 surface = pygame.display.set_mode((WIDTH + 300, HEIGHT))
@@ -93,8 +93,8 @@ score = 0
 record = get_record()
 
 # fonts
-font = pygame.font.SysFont('Impact', 1000)
-text_font = pygame.font.SysFont('Impact', 1000)
+font = pygame.font.SysFont('Impact', 150)
+text_font = pygame.font.SysFont('Impact', 80)
 
 while True:
     surface.blit(bg, (WIDTH, 0))
@@ -132,8 +132,8 @@ while True:
     [food.draw() for food in food_list]
 
     # draw stats
-    surface.blit(text_font.render('TIME', True, pygame.Color('black'), True), (WIDTH + 70, 30))
-    surface.blit(font.render(f'{time}', True, pygame.Color('black')), (WIDTH + 70, 130))
+    surface.blit(text_font.render('TIME', True, pygame.Color('cyan'), True), (WIDTH + 70, 30))
+    surface.blit(font.render(f'{time}', True, pygame.Color('cyan')), (WIDTH + 70, 130))
     surface.blit(text_font.render('score:', True, pygame.Color('forestgreen'), True), (WIDTH + 50, 350))
     surface.blit(font.render(f'{score}', True, pygame.Color('forestgreen')), (WIDTH + 70, 430))
     surface.blit(text_font.render('record:', True, pygame.Color('magenta'), True), (WIDTH + 30, 620))
