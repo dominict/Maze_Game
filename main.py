@@ -70,7 +70,7 @@ bg = pygame.image.load('img/bg_main.jpg').convert()
 maze = generate_maze()
 
 # player settings
-player_speed = 5
+player_speed = 2
 player_img = pygame.image.load('img/0.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (TILE - 2 * maze[0].thickness, TILE - 2 * maze[0].thickness))
 player_rect = player_img.get_rect()
