@@ -37,7 +37,7 @@ def is_game_over():
         [food.set_pos() for food in food_list]
         set_record(record, score)
         record = get_record()
-        time, score, FPS = 60, 0, 5000
+        time, score, FPS = 60, 0, 500
 
 
 def get_record():
@@ -71,7 +71,7 @@ maze = generate_maze()
 
 # player settings
 player_speed = 2
-player_img = pygame.image.load('img/0.png').convert_alpha()
+player_img = pygame.image.load('img/shark.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (TILE - 2 * maze[0].thickness, TILE - 2 * maze[0].thickness))
 player_rect = player_img.get_rect()
 player_rect.center = TILE // 2, TILE // 2
@@ -80,7 +80,7 @@ keys = {'LEFT': pygame.K_LEFT, 'RIGHT': pygame.K_RIGHT, 'UP': pygame.K_UP, 'DOWN
 direction = (0, 0)
 
 # food settings
-food_list = [Food() for i in range(3)]
+food_list = [Food() for i in range(4)]
 
 # collision list
 walls_collide_list = sum([cell.get_rects() for cell in maze], [])
