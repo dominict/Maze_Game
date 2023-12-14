@@ -58,9 +58,9 @@ pygame.init()
 game_surface = pygame.Surface(RES)
 score_surface = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-
 # images
 bg_game = pygame.image.load('img/bg_1.jpg').convert()
+bg_game = pygame.transform.scale(bg_game, RES)
 bg = pygame.image.load('img/bg_main.jpg').convert()
 
 # get maze
