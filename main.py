@@ -44,7 +44,7 @@ def get_record():
     except FileNotFoundError:
         with open('record', 'w') as f:
             f.write('0')
-            return 0bg_main.jpg
+            return 0
 
 
 def set_record(record, score):
