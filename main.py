@@ -56,7 +56,7 @@ def set_record(record, score):
 FPS = 60
 pygame.init()
 game_surface = pygame.Surface(RES)
-score_surface = pygame.display.set_mode((WIDTH - 300, HEIGHT))
+score_surface = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
 # images

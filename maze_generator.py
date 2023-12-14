@@ -9,7 +9,7 @@ WIDTH, HEIGHT = wx.GetDisplaySize()
 
 RES = (WIDTH - 300), HEIGHT
 TILE = 80
-cols, rows = (WIDTH - 140) // TILE, HEIGHT // TILE
+cols, rows = (WIDTH - 300) // TILE, HEIGHT // TILE
 
 class Cell:
     def __init__(self, x, y):
