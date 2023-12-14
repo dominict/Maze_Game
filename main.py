@@ -36,9 +36,6 @@ def is_game_over():
         player_rect.center = TILE // 2, TILE // 2
         [food.set_pos() for food in food_list]
         set_record(record, score)
-        record = get_record()
-        time, score, FPS = 60, 0, 500
-
 
 def get_record():
     try:
@@ -47,7 +44,7 @@ def get_record():
     except FileNotFoundError:
         with open('record', 'w') as f:
             f.write('0')
-            return 0
+            return 0bg_main.jpg
 
 
 def set_record(record, score):
@@ -56,10 +53,10 @@ def set_record(record, score):
         f.write(str(rec))
 
 
-FPS = 500
+FPS = 60
 pygame.init()
 game_surface = pygame.Surface(RES)
-score_surface = pygame.display.set_mode((WIDTH + 300, HEIGHT))
+score_surface = pygame.display.set_mode((WIDTH - 300, HEIGHT))
 clock = pygame.time.Clock()
 
 # images
@@ -70,7 +67,7 @@ bg = pygame.image.load('img/bg_main.jpg').convert()
 maze = generate_maze()
 
 # player settings
-player_speed = 2
+player_speed = 5
 player_img = pygame.image.load('img/shark.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (TILE - 2 * maze[0].thickness, TILE - 2 * maze[0].thickness))
 player_rect = player_img.get_rect()

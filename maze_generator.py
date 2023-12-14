@@ -5,9 +5,9 @@ import wx
 
 outp= wx.App(False)
 
-WIDTH, HEIGHT= wx.GetDisplaySize()
+WIDTH, HEIGHT = wx.GetDisplaySize()
 
-RES = WIDTH, HEIGHT 
+RES = (WIDTH - 300), HEIGHT
 TILE = 80
 cols, rows = (WIDTH - 140) // TILE, HEIGHT // TILE
 
