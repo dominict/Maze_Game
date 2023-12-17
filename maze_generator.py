@@ -65,7 +65,7 @@ class Cell:
         if left and not left.visited:
             neighbors.append(left)
         return choice(neighbors) if neighbors else False
-
+    
 
 def remove_walls(current, next):
     dx = current.x - next.x

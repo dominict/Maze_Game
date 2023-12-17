@@ -93,11 +93,11 @@ font = pygame.font.SysFont('Impact', 150)
 text_font = pygame.font.SysFont('Impact', 80)
 
 while True:
-    score_surface.blit(bg, (WIDTH, 0))
+    score_surface.blit(bg, (WIDTH, 300))
     score_surface.blit(game_surface, (0, 0))
     game_surface.blit(bg_game, (0, 0))
 
-    for event in pygame.event.get():
+    for event in pygame.event.get(0):
         if event.type == pygame.QUIT:
             exit()
         if event.type == pygame.USEREVENT:
