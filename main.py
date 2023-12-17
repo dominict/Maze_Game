@@ -97,7 +97,7 @@ while True:
     score_surface.blit(game_surface, (0, 0))
     game_surface.blit(bg_game, (0, 0))
 
-    for event in pygame.event.get(0):
+    for event in pygame.event.get( ):
         if event.type == pygame.QUIT:
             exit()
         if event.type == pygame.USEREVENT:
