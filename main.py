@@ -56,18 +56,18 @@ def set_record(record, score):
 FPS = 60
 pygame.init()
 game_surface = pygame.Surface(RES)
-score_surface = pygame.display.set_mode((WIDTH, HEIGHT))
+score_surface = pygame.display.set_mode((WIDTH +0, HEIGHT))
 clock = pygame.time.Clock()
 # images
 bg_game = pygame.image.load('img/bg_1.jpg').convert()
-bg_game = pygame.transform.scale(bg_game, RES)
+bg_game = pygame.transform.scale(bg_game,RES)
 bg = pygame.image.load('img/bg_main.jpg').convert()
 
 # get maze
 maze = generate_maze()
 
 # player settings
-player_speed = 5
+player_speed = 4
 player_img = pygame.image.load('img/shark.png').convert_alpha()
 player_img = pygame.transform.scale(player_img, (TILE - 2 * maze[0].thickness, TILE - 2 * maze[0].thickness))
 player_rect = player_img.get_rect()
@@ -93,11 +93,11 @@ font = pygame.font.SysFont('Impact', 150)
 text_font = pygame.font.SysFont('Impact', 80)
 
 while True:
-    score_surface.blit(bg, (WIDTH, 300))
-    score_surface.blit(game_surface, (0, 0))
+    score_surface.blit(bg, (WIDTH - 300, 0))
+    score_surface.blit(game_surface,(0,0))
     game_surface.blit(bg_game, (0, 0))
 
-    for event in pygame.event.get( ):
+    for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
         if event.type == pygame.USEREVENT:
@@ -117,7 +117,7 @@ while True:
 
     # gameplay
     if eat_food():
-        FPS += 10
+        FPS += 60
         score += 1
     is_game_over()
 
@@ -128,12 +128,12 @@ while True:
     [food.draw() for food in food_list]
 
     # draw stats
-    score_surface.blit(text_font.render('TIME', True, pygame.Color('cyan'), True), (WIDTH + 70, 30))
-    score_surface.blit(font.render(f'{time}', True, pygame.Color('cyan')), (WIDTH + 70, 130))
-    score_surface.blit(text_font.render('score:', True, pygame.Color('forestgreen'), True), (WIDTH + 50, 350))
-    score_surface.blit(font.render(f'{score}', True, pygame.Color('forestgreen')), (WIDTH + 70, 430))
-    score_surface.blit(text_font.render('record:', True, pygame.Color('magenta'), True), (WIDTH + 30, 620))
-    score_surface.blit(font.render(f'{record}', True, pygame.Color('magenta')), (WIDTH + 70, 700))
+    score_surface.blit(text_font.render('TIME', True, pygame.Color('cyan'), True), (WIDTH - 230, 30))
+    score_surface.blit(font.render(f'{time}', True, pygame.Color('cyan')), (WIDTH - 230, 130))
+    score_surface.blit(text_font.render('score:', True, pygame.Color('forestgreen'), True), (WIDTH - 230, 350))
+    score_surface.blit(font.render(f'{score}', True, pygame.Color('forestgreen')), (WIDTH - 230, 430))
+    score_surface.blit(text_font.render('record:', True, pygame.Color('magenta'), True), (WIDTH - 250, 620))
+    score_surface.blit(font.render(f'{record}', True, pygame.Color('magenta')), (WIDTH - 230, 700))
     # print(clock.get_fps())
     pygame.display.flip()
     clock.tick(FPS)
